@@ -27,13 +27,18 @@ void moveShaft(int angle, long int delay_ms)
 
 void setup()
 {
-    sv.attach(9, 800, 2300);
+    Serial.begin(9600);
+    Serial.write("Started...\n");
+    Serial.write("  crossing bar v0.1\n");
+    sv.attach(4, 800, 2300);
 }
 
 void loop()
 {
-    moveShaft(0, 5);
-    delay(5000);
+    Serial.write("move to 90 deg.\n");
     moveShaft(90, 5);
+    delay(5000);
+    Serial.write("move to  0 deg.\n");
+    moveShaft(0, 5);
     delay(5000);
 }
