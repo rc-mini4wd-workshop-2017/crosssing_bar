@@ -40,5 +40,5 @@ void loop()
     delay(5000);
     Serial.write("move to  0 deg.\n");
     moveShaft(0, 5);
-    delay(5000);
+    delay(10000);
 }
